@@ -63,6 +63,7 @@ const Xstateslist = () => {
     };
     fetchcity();
   }, [selectedCountry, selectedState]);
+ 
 
   return (
 
@@ -127,7 +128,13 @@ const Xstateslist = () => {
           </option>
         ))}
       </select>
+
+      
     </div>
+    {selectedCountry && selectedState && selectedCity && (
+      <h3 style={{ display:"flex", justifyContent:"center",  gap:"10px"}}>
+        You selected {selectedCity}, {selectedState}, {selectedCountry}</h3>
+    )}
     </div>
   );
 };
