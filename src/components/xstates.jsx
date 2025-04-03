@@ -18,6 +18,7 @@ const Xstateslist = () => {
         );
         //console.log(res);
         setcountrydata(res.data);
+        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -30,7 +31,7 @@ const Xstateslist = () => {
       if (selectedCountry) {
         try {
           const res = await axios.get(
-            `https://crio-location-selector.onrender.com/countries/${selectedCountry}/states`
+            `https://crio-location-selector.onrender.com/country=${selectedCountry}/states`
           );
           //console.log("states", res);
           setStates(res.data);
@@ -50,7 +51,7 @@ const Xstateslist = () => {
       if (selectedCountry && selectedState) {
         try {
           const res = await axios.get(
-            `https://crio-location-selector.onrender.com/countries/${selectedCountry}/state/${selectedState}/cities`
+            `https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`
           );
           //console.log(res);
           setcity(res.data);
